@@ -10,7 +10,7 @@
 			<!-- BEGIN LOGO -->
 			{% block page_logo %}{% endblock %}
 			<!-- END LOGO -->
-	
+
 			<!-- BEGIN RESPONSIVE MENU TOGGLER -->
 			{% block responsive_menu_toggler %}
 			<a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
@@ -18,17 +18,17 @@
 			</a>
 			{% endblock %}
 			<!-- END RESPONSIVE MENU TOGGLER -->
-	
+
 			<!-- BEGIN TOP NAVIGATION MENU -->
 			<div class="top-menu">
 				<ul class="nav navbar-nav pull-right">
-				
+
 					<!-- BEGIN NOTIFICATION DROPDOWN -->
 					{% block notification_dropdown %}
-					{{ render(controller('APMetronicBundle:Header:_showNotifications')) }}
+					{{ render(controller('APMetronicBundle:Header:_showNotifications', {'top_menu_style': top_menu_style})) }}
 					{% endblock %}
 					<!-- END NOTIFICATION DROPDOWN -->
-					
+
 					<!-- BEGIN TODO DROPDOWN -->
 					{% block todo_dropdown %}
 					{{ render(controller('APMetronicBundle:Header:_showTasks')) }}
@@ -37,15 +37,15 @@
 					<li class="droddown dropdown-separator">
 						<span class="separator"></span>
 					</li>
-					
+
 					<!-- BEGIN INBOX DROPDOWN -->
 					{% block inbox_dropdown %}{% endblock %}
 					<!-- END INBOX DROPDOWN -->
-					
+
 					<!-- BEGIN USER LOGIN DROPDOWN -->
 					{% block user_login_dropdown %}{% endblock %}
 					<!-- END USER LOGIN DROPDOWN -->
-					
+
 					<!-- BEGIN QUICK SIDEBAR TOGGLER -->
 					{% block quick_sidebar_toggler %}
 					<li class="dropdown dropdown-quick-sidebar-toggler">
@@ -55,23 +55,23 @@
 					</li>
 					{% endblock %}
 					<!-- END QUICK SIDEBAR TOGGLER -->
-					
+
 				</ul>
 			</div>
 			<!-- END TOP NAVIGATION MENU -->
-			
+
 		</div>
 	</div>
 	<!-- END HEADER TOP -->
-	
+
 	<!-- BEGIN HEADER MENU -->
 	<div class="page-header-menu">
 		<div class="container">
-		
+
 			<!-- BEGIN HEADER SEARCH BOX -->
 			{% block header_searchbox %}{% endblock %}
 			<!-- END HEADER SEARCH BOX -->
-			
+
 			<!-- BEGIN MEGA MENU -->
 			{% block megamenu %}
 				<div class="hor-menu  ">
@@ -81,10 +81,10 @@
 				</div>
 			{% endblock %}
 			<!-- END MEGA MENU -->
-			
+
 		</div>
 	</div>
 	<!-- END HEADER MENU -->
-	
+
 </div>
 <!-- END HEADER -->
