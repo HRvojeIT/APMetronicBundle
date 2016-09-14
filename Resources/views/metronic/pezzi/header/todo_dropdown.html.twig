@@ -1,0 +1,35 @@
+{# src/APNet/Bundle/APMetronicBundle/Resources/views/metronic/pezzi/header/todo_dropdown.html.twig #}
+<li class="dropdown dropdown-extended dropdown-tasks dropdown-dark" id="header_task_bar">
+	<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+		<i class="icon-calendar"></i>
+		{% if newactivetasks is defined and newactivetasks > 0 %}
+		<span class="badge badge-default">{{ newactivetasks }}</span>
+		{% endif %}
+	</a>
+	<ul class="dropdown-menu extended tasks">
+		<li class="external">
+			<h3>Hai
+				<strong>{{ activetasks }} task{{ activetasks == 1 ? '' : 's' }} attiv{{ activetasks == 1 ? 'o' : 'i' }}</strong></h3>
+			<!--<a href="app_todo_2.html">view all</a>-->
+		</li>
+		<li>
+			<ul class="dropdown-menu-list scroller" style="height: 275px;" data-handle-color="#637283">
+				{% for task in tasks %}
+				<li>
+					<a href="javascript:;">
+						<span class="task">
+							<span class="desc">{{ task.text }} </span>
+							<span class="percent">{{ task.percent }}%</span>
+						</span>
+						<span class="progress">
+							<span style="width: {{ task.percent }}%;" class="progress-bar progress-bar-success" aria-valuenow="{{ task.percent }}" aria-valuemin="0" aria-valuemax="100">
+								<span class="sr-only">{{ task.percent }}% Completato</span>
+							</span>
+						</span>
+					</a>
+				</li>
+				{% endfor %}
+			</ul>
+		</li>
+	</ul>
+</li>

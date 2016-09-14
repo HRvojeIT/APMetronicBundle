@@ -1,0 +1,90 @@
+{# src/APNet/Bundle/APMetronicBundle/Resources/views/metronic/sezioni/header.html.twig #}
+
+<!-- BEGIN HEADER -->
+<div class="page-header">
+
+	<!-- BEGIN HEADER TOP -->
+	<div class="page-header-top">
+		<div class="container">
+
+			<!-- BEGIN LOGO -->
+			{% block page_logo %}{% endblock %}
+			<!-- END LOGO -->
+	
+			<!-- BEGIN RESPONSIVE MENU TOGGLER -->
+			{% block responsive_menu_toggler %}
+			<a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+				<span></span>
+			</a>
+			{% endblock %}
+			<!-- END RESPONSIVE MENU TOGGLER -->
+	
+			<!-- BEGIN TOP NAVIGATION MENU -->
+			<div class="top-menu">
+				<ul class="nav navbar-nav pull-right">
+				
+					<!-- BEGIN NOTIFICATION DROPDOWN -->
+					{% block notification_dropdown %}
+					{{ render(controller('APMetronicBundle:Header:_showNotifications')) }}
+					{% endblock %}
+					<!-- END NOTIFICATION DROPDOWN -->
+					
+					<!-- BEGIN TODO DROPDOWN -->
+					{% block todo_dropdown %}
+					{{ render(controller('APMetronicBundle:Header:_showTasks')) }}
+					{% endblock %}
+					<!-- END TODO DROPDOWN -->
+					<li class="droddown dropdown-separator">
+						<span class="separator"></span>
+					</li>
+					
+					<!-- BEGIN INBOX DROPDOWN -->
+					{% block inbox_dropdown %}{% endblock %}
+					<!-- END INBOX DROPDOWN -->
+					
+					<!-- BEGIN USER LOGIN DROPDOWN -->
+					{% block user_login_dropdown %}{% endblock %}
+					<!-- END USER LOGIN DROPDOWN -->
+					
+					<!-- BEGIN QUICK SIDEBAR TOGGLER -->
+					{% block quick_sidebar_toggler %}
+					<li class="dropdown dropdown-quick-sidebar-toggler">
+						<a href="{{ url('logout') }}" class="dropdown-toggle">
+							<i class="icon-logout"></i>
+						</a>
+					</li>
+					{% endblock %}
+					<!-- END QUICK SIDEBAR TOGGLER -->
+					
+				</ul>
+			</div>
+			<!-- END TOP NAVIGATION MENU -->
+			
+		</div>
+	</div>
+	<!-- END HEADER TOP -->
+	
+	<!-- BEGIN HEADER MENU -->
+	<div class="page-header-menu">
+		<div class="container">
+		
+			<!-- BEGIN HEADER SEARCH BOX -->
+			{% block header_searchbox %}{% endblock %}
+			<!-- END HEADER SEARCH BOX -->
+			
+			<!-- BEGIN MEGA MENU -->
+			{% block megamenu %}
+				<div class="hor-menu  ">
+				{% if 'knp_menu' is loaded %}
+					{{ knp_menu_render('hor_menu', { 'template': 'APMetronicBundle:metronic/pezzi/header:knp_mega_menu.html.twig', 'currentClass': 'active', 'ancestorClass': 'active' }) }}
+				{% endif %}
+				</div>
+			{% endblock %}
+			<!-- END MEGA MENU -->
+			
+		</div>
+	</div>
+	<!-- END HEADER MENU -->
+	
+</div>
+<!-- END HEADER -->

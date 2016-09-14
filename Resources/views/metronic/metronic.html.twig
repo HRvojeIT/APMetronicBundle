@@ -1,0 +1,65 @@
+{# src/APNet/Bundle/APMetronicBundle/Resources/views/metronic/metronic.html.twig #}
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+    <!--<![endif]-->
+	
+    <!-- BEGIN HEAD -->
+    <head>
+		{% block head %}{% endblock %}
+    </head>
+    <!-- END HEAD -->
+
+	<!-- BEGIN BODY -->
+    <body class="{% block body_class %}{% endblock %}">
+		{% block body %}
+        <div class="page-wrapper">
+			<div class="page-wrapper-row">
+				<div class="page-wrapper-top">
+				
+				<!-- BEGIN HEADER -->
+				{% block header %}{% endblock %}
+				<!-- END HEADER -->
+				
+				</div>
+			</div>
+			<div class="page-wrapper-row full-height">
+				<div class="page-wrapper-middle">
+            
+					<!-- BEGIN CONTAINER -->
+					<div class="page-container">
+									
+						<!-- BEGIN CONTENT -->
+						{% block content %}{% endblock %}
+						<!-- END CONTENT -->
+
+						<!-- BEGIN QUICK SIDEBAR -->
+						{% block quicksidebar %}{% endblock %}
+						<!-- END QUICK SIDEBAR -->
+					
+					</div>
+					<!-- END CONTAINER -->
+				
+				</div>
+			</div>
+            <div class="page-wrapper-row">
+                <div class="page-wrapper-bottom">
+			
+				<!-- BEGIN FOOTER -->
+				{% block footer %}{% endblock %}
+				<!-- END FOOTER -->
+				
+				</div>
+				
+			</div>
+        </div>
+		
+		<!-- START THEME LAYOUT SCRIPTS -->
+		{% block javascripts %}{% endblock %}
+        <!-- END THEME LAYOUT SCRIPTS -->
+		
+		{% endblock %}
+    </body>
+	<!-- END BODY -->

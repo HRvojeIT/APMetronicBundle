@@ -1,0 +1,28 @@
+{# src/APNet/Bundle/APMetronicBundle/Resources/views/metronic/sezioni/head.html.twig #}
+<div class="page-sidebar-wrapper">
+
+	<!-- BEGIN SIDEBAR -->
+	<div class="page-sidebar navbar-collapse collapse">
+	
+		<!-- BEGIN SIDEBAR MENU -->
+		<ul class="page-sidebar-menu  page-header-fixed page-sidebar-menu-closed " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200" style="padding-top: 20px">
+			
+			<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+			{% block sidebar_toggler_button %}{% endblock %}
+			<!-- END SIDEBAR TOGGLER BUTTON -->
+			
+			<!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
+			{% block sidebar_quick_search %}{% endblock %}
+			<!-- END RESPONSIVE QUICK SEARCH FORM -->
+			
+			<!-- BEGIN SIDEBAR ITEMS -->
+			{% block sidebar_items %}{% endblock %}
+			<!-- END SIDEBAR ITEMS -->
+			
+		</ul>
+		<!-- END SIDEBAR MENU -->
+		
+	</div>
+	<!-- END SIDEBAR -->
+	
+</div>

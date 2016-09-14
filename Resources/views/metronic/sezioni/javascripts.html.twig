@@ -1,0 +1,29 @@
+{# src/APNet/Bundle/APMetronicBundle/Resources/views/metronic/sezioni/javascripts.html.twig #}
+<!--[if lt IE 9]>
+<script src="{{ asset('bundles/apmetronic/global/plugins/respond.min.js') }}"></script>
+<script src="{{ asset('bundles/apmetronic/global/plugins/excanvas.min.js') }}"></script> 
+<![endif]-->
+<!-- BEGIN CORE PLUGINS -->
+<script src="{{ asset('bundles/apmetronic/global/plugins/jquery.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('bundles/apmetronic/global/plugins/bootstrap/js/bootstrap.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('bundles/apmetronic/global/plugins/js.cookie.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('bundles/apmetronic/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('bundles/apmetronic/global/plugins/jquery.blockui.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('bundles/apmetronic/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js') }}" type="text/javascript"></script>
+<!-- END CORE PLUGINS -->
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+{% block page_level_plugin_javascripts %}{% endblock %}
+<!-- END PAGE LEVEL PLUGINS -->
+<!-- BEGIN THEME GLOBAL SCRIPTS -->
+<script src="{{ asset('bundles/apmetronic/global/scripts/app.min.js') }}" type="text/javascript"></script>
+<!-- END THEME GLOBAL SCRIPTS -->
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
+{% block page_level_javascripts %}{% endblock %}
+<!-- END PAGE LEVEL SCRIPTS -->
+<!-- BEGIN THEME LAYOUT SCRIPTS -->
+{% block theme_layout_javascripts %}
+<script src="{{ asset('bundles/apmetronic/layouts3/layout/scripts/layout.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('bundles/apmetronic/layouts3/layout/scripts/demo.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('bundles/apmetronic/layouts/global/scripts/quick-sidebar.min.js') }}" type="text/javascript"></script>
+{% endblock %}
+<!-- END THEME LAYOUT SCRIPTS -->

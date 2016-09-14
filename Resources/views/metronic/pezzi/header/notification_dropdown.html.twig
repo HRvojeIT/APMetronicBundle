@@ -1,0 +1,31 @@
+{# src/APNet/Bundle/APMetronicBundle/Resources/views/metronic/pezzi/header/notification_dropdown.html.twig #}
+<li class="dropdown dropdown-extended dropdown-notification dropdown-dark" id="header_notification_bar">
+	<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+		<i class="icon-bell"></i>
+		{% if newnotifications is defined and newnotifications > 0 %}
+		<span class="badge badge-default">{{ newnotifications }}</span>
+		{% endif %}
+	</a>
+	<ul class="dropdown-menu">
+		<li class="external">
+			<h3>Hai
+				<strong>{{ newnotifications }} nuov{{ newnotifications == 1 ? 'a' : 'e' }}</strong> notific{{ newnotifications == 1 ? 'a' : 'he' }}</h3>
+			<!--<a href="app_todo.html">view all</a>-->
+		</li>
+		<li>
+			<ul class="dropdown-menu-list scroller" style="height: 250px;" data-handle-color="#637283">
+				{% for notification in notifications %}
+				<li>
+					<a href="javascript:;">
+						<span class="time">{{ notification.time }}</span>
+						<span class="details">
+							<span class="label label-sm label-icon label-{{ notification.label }}">
+								<i class="fa fa-bolt"></i>
+							</span> {{ notification.text }} </span>
+					</a>
+				</li>
+				{% endfor %}
+			</ul>
+		</li>
+	</ul>
+</li>

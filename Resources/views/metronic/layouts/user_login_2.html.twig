@@ -1,0 +1,48 @@
+{# src/APNet/Bundle/APMetronicBundle/Resources/views/metronic/layout/user_login_2.html.twig #}
+
+{% set theme_color = 'blue' %}
+
+{% extends 'APMetronicBundle:metronic:metronic.html.twig' %}
+
+{% block head %}
+    {{ parent() }}
+
+    {% embed 'APMetronicBundle:metronic:sezioni/head.html.twig' %}
+        {% block page_level_plugin_stylesheets %}
+			<link href="{{ asset('bundles/apmetronic/global/plugins/select2/css/select2.min.css') }}" rel="stylesheet" type="text/css" />
+        	<link href="{{ asset('bundles/apmetronic/global/plugins/select2/css/select2-bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+        {% endblock %}
+		{% block page_level_stylesheets %}
+			<link href="{{ asset('bundles/apmetronic/pages/css/login-2.min.css') }}" rel="stylesheet" type="text/css" />
+		{% endblock %}
+		{% block theme_layout_stylesheets %}{% endblock %}
+    {% endembed %}
+		
+{% endblock %}
+
+{% block body_class %}login{% endblock %}
+
+{% block body%}
+	<!-- BEGIN LOGO -->
+	{% block login_logo %}{% endblock %}
+	<!-- END LOGO -->
+        	
+	<!-- BEGIN LOGIN -->
+	<div class="content">
+				
+		{% block login_content %}{% endblock %}
+			
+	</div> 
+	<!-- END LOGIN -->
+	{% embed 'APMetronicBundle:metronic:sezioni/javascripts.html.twig' %}
+		{% block page_level_plugin_javascripts %}
+			<script src="{{ asset('bundles/apmetronic/global/plugins/jquery-validation/js/jquery.validate.min.js') }}" type="text/javascript"></script>
+			<script src="{{ asset('bundles/apmetronic/global/plugins/jquery-validation/js/additional-methods.min.js') }}" type="text/javascript"></script>
+			<script src="{{ asset('bundles/apmetronic/global/plugins/select2/js/select2.full.min.js') }}" type="text/javascript"></script>
+		{% endblock %}
+		{% block page_level_javascripts %}
+			<script src="{{ asset('bundles/apmetronic/pages/scripts/login.min.js') }}" type="text/javascript"></script>
+		{% endblock %}
+		{% block theme_layout_javascripts %}{% endblock %}
+	{% endembed %}
+{% endblock %}
