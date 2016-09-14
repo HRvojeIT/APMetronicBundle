@@ -19,7 +19,7 @@ class HeaderController extends Controller
 		exit();
 		if($this->container->has('apmetronic.header')) {
 			$notificationArray = $this->get('apmetronic.header')->_getNotifications();
-			array_push($notificationArray, 'activetasks' => 2,)
+			array_push($notificationArray, 'activetasks' => 2);
 			return
 				$this->render('APMetronicBundle:metronic/pezzi/header:notification_dropdown.html.twig',
 				$notificationArray
