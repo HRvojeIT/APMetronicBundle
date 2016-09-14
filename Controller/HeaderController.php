@@ -9,16 +9,13 @@ use Symfony\Component\HttpFoundation\Response;
 class HeaderController extends Controller
 {
 
-    public function _showNotificationsAction($params)
+    public function _showNotificationsAction($top_menu_style)
     {
 		// Verifica se è stato inserito il servizio apmetronic.header, in caso contrario
 		// nasconde le notifiche
-		print_r($params);
-		echo "AAAA";
-		print_r($request->query);
-		exit();
 		if($this->container->has('apmetronic.header')) {
 			$notificationArray = $this->get('apmetronic.header')->_getNotifications();
+			array_push(array('top_menu_style' => $top_menu_style), $notificationArray);
 			return
 				$this->render('APMetronicBundle:metronic/pezzi/header:notification_dropdown.html.twig',
 				$notificationArray
