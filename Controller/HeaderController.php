@@ -15,7 +15,7 @@ class HeaderController extends Controller
 		// nasconde le notifiche
 		if($this->container->has('apmetronic.header')) {
 			$notificationArray = $this->get('apmetronic.header')->_getNotifications();
-			array_push(array('top_menu_style' => $top_menu_style), $notificationArray);
+			$notificationArray['top_menu_style'] = $top_menu_style;
 			return
 				$this->render('APMetronicBundle:metronic/pezzi/header:notification_dropdown.html.twig',
 				$notificationArray
@@ -24,12 +24,13 @@ class HeaderController extends Controller
 			return new Response();
     }
 
-	public function _showTasksAction()
+	public function _showTasksAction($top_menu_style)
     {
 		// Verifica se è stato inserito il servizio apmetronic.header, in caso contrario
 		// nasconde i tasks
 		if($this->container->has('apmetronic.header')) {
 			$tasksArray = $this->get('apmetronic.header')->_getTasks();
+			$tasksArray['top_menu_style'] = $top_menu_style;
 			return
 				$this->render('APMetronicBundle:metronic/pezzi/header:todo_dropdown.html.twig',
 				$tasksArray);

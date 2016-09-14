@@ -25,13 +25,19 @@
 
 					<!-- BEGIN NOTIFICATION DROPDOWN -->
 					{% block notification_dropdown %}
-					{{ render(controller('APMetronicBundle:Header:_showNotifications', {'top_menu_style': top_menu_style})) }}
+					{{ render(controller(
+						'APMetronicBundle:Header:_showNotifications',
+						{'top_menu_style': top_menu_style}
+					)) }}
 					{% endblock %}
 					<!-- END NOTIFICATION DROPDOWN -->
 
 					<!-- BEGIN TODO DROPDOWN -->
 					{% block todo_dropdown %}
-					{{ render(controller('APMetronicBundle:Header:_showTasks')) }}
+					{{ render(controller(
+						'APMetronicBundle:Header:_showTasks',
+						{'top_menu_style': top_menu_style}
+					)) }}
 					{% endblock %}
 					<!-- END TODO DROPDOWN -->
 					<li class="droddown dropdown-separator">
